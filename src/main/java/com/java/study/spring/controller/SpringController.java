@@ -1,7 +1,9 @@
 package com.java.study.spring.controller;
 
+import com.java.study.spring.bean.Person;
 import com.java.study.spring.service.SpringService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,8 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 public class SpringController {
     @Autowired
     private SpringService springService;
+
+    @Autowired
+    private AnnotationConfigServletWebServerApplicationContext context;
+
     @RequestMapping("/factoryBeanTest")
     public String factoryBeanTest()  throws Exception{
         return springService.factoryBeanTest();
+    }
+
+    @RequestMapping("beanLifeCycleTest")
+    public void beanLifeCycleTest() {
+        Person person = (Person)context.getBean("person");
+        System.out.println(person);
+
+        System.out.println("现在开始关闭容器！");
+        context.destroy();
     }
 }

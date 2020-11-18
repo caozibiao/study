@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ConfigTest {
-    @Bean
+    /*@Bean
     Person person() {
         return new Person();
-    }
+    }*/
 }

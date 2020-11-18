@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class AopLog {
-    @Pointcut("execution (* com.java.study.spring.controller.*.*(..))")
+    @Pointcut("execution (* com.java.study.spring.utils.*.*(..))")
     public void logPointcut() {
         System.out.println("-------------logPointcut---------");
     }

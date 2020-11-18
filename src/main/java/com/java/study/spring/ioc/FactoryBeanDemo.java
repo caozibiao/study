@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @date 2020/11/13 16:10
  * @Version 1.0
  */
-@Component
+//@Component
 public class FactoryBeanDemo implements FactoryBean {
     @Override
     public Object getObject() throws Exception {
