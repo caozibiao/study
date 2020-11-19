@@ -7,4 +7,6 @@ package com.java.study.spring.service;
  */
 public interface SpringService {
     String factoryBeanTest()  throws Exception;
+
+    void transactionTest();
 }

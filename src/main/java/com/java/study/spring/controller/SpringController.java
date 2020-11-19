@@ -33,4 +33,9 @@ public class SpringController {
         //System.out.println("现在开始关闭容器！");
         //context.destroy();
     }
+
+    @RequestMapping("/transactionTest")
+    public void transactionTest() {
+        springService.transactionTest();
+    }
 }
