@@ -25,12 +25,12 @@ public class SpringController {
         return springService.factoryBeanTest();
     }
 
-    @RequestMapping("beanLifeCycleTest")
+    @RequestMapping("/beanLifeCycleTest")
     public void beanLifeCycleTest() {
         Person person = (Person)context.getBean("person");
         System.out.println(person);
 
-        System.out.println("现在开始关闭容器！");
-        context.destroy();
+        //System.out.println("现在开始关闭容器！");
+        //context.destroy();
     }
 }
