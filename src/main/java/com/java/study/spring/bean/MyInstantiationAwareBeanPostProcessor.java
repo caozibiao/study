@@ -15,7 +15,7 @@ import org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostP
 import org.springframework.stereotype.Component;
 
 @Component
-public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
+public class MyInstantiationAwareBeanPostProcessor implements SmartInstantiationAwareBeanPostProcessor {
 
     public MyInstantiationAwareBeanPostProcessor() {
         super();
