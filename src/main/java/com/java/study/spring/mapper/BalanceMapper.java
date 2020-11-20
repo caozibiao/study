@@ -1,7 +1,8 @@
 package com.java.study.spring.mapper;
 
 import com.java.study.spring.entity.po.Balance;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author caozibiao
  * @since 2020-11-19
  */
-public interface BalanceMapper extends BaseMapper<Balance> {
 
+@Repository
+public interface BalanceMapper {
+
+
+    int updateById(@Param(value = "balance") Balance balance);
 }

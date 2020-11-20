@@ -9,4 +9,14 @@
         <result column="balance" property="balance" />
     </resultMap>
 
+    <update id="updateById" parameterType="com.java.study.spring.entity.po.Balance">
+        update test.balance
+        <set>
+            <if test="balance.name != null">name=#{balance.name},</if>
+            <if test="balance != null">balance=#{balance.balance}</if>
+
+        </set>
+        where id = #{balance.id}
+    </update>
+
 </mapper>

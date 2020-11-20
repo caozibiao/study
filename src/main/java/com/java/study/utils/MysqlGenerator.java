@@ -1,3 +1,4 @@
+/*
 package com.java.study.utils;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
@@ -14,9 +15,11 @@ import java.util.List;
 
 public class MysqlGenerator {
 
-    /**
+    */
+/**
      * RUN THIS
-     */
+     *//*
+
     public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
@@ -47,10 +50,10 @@ public class MysqlGenerator {
 
         // TODO 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.130.176:3506/test?serverTimezone=GMT%2B8&characterEncoding=utf-8");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/test?serverTimezone=GMT%2B8&characterEncoding=utf-8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("BigData@176");
+        dsc.setUsername("czb");
+        dsc.setPassword("123456");
         mpg.setDataSource(dsc);
 
         // TODO 包配置
@@ -115,3 +118,4 @@ public class MysqlGenerator {
     }
 
 }
+*/

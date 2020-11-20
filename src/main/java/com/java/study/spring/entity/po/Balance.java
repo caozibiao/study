@@ -1,12 +1,8 @@
 package com.java.study.spring.entity.po;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
+
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+
 
 /**
  * <p>
@@ -17,22 +13,15 @@ import lombok.experimental.Accessors;
  * @since 2020-11-19
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-public class Balance extends Model<Balance> {
+public class Balance {
 
-    private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     private String name;
 
     private Integer balance;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
 
     public Integer getId() {
         return id;
@@ -58,9 +47,5 @@ public class Balance extends Model<Balance> {
         this.balance = balance;
     }
 
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
-    }
 
 }

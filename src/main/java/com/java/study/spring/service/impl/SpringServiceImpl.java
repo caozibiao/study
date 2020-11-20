@@ -37,9 +37,9 @@ public class SpringServiceImpl implements SpringService {
         zhangsanBalance.setName("zhangsan");
         balanceMapper.updateById(zhangsanBalance);
         Balance lisiBalance = new Balance();
-        zhangsanBalance.setBalance(1200);
-        zhangsanBalance.setId(2);
-        zhangsanBalance.setName("lisi");
-        balanceMapper.updateById(zhangsanBalance);
+        lisiBalance.setBalance(1200);
+        lisiBalance.setId(2);
+        lisiBalance.setName("lisi");
+        balanceMapper.updateById(lisiBalance);
     }
 }
