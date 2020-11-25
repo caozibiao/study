@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 2020-11-19
  */
 
-@Repository
 public interface BalanceMapper {
 
 

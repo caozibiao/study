@@ -29,7 +29,7 @@ public class SpringServiceImpl implements SpringService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
+    //@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     public void transactionTest() {
         Balance zhangsanBalance = new Balance();
         zhangsanBalance.setBalance(800);
