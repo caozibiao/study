@@ -1,3 +1,4 @@
+/*
 package com.java.study.spring.annotation;
 
 import org.junit.jupiter.api.Test;
@@ -7,11 +8,13 @@ import java.util.Arrays;
 
 import static org.springframework.test.util.AssertionErrors.assertTrue;
 
+*/
 /**
  * @Author zibiao cao
  * @date 2020/11/17 10:48
  * @Version 1.0
- */
+ *//*
+
 
 public class MyInheritedClassTest {
     @Test
@@ -38,3 +41,4 @@ public class MyInheritedClassTest {
         }
     }
 }
+*/

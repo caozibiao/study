@@ -1,6 +1,8 @@
 /*
 package com.java.study.jvm;
 
+import jdk.internal.perf.PerfCounter;
+
 import java.io.*;
 
 
@@ -54,9 +56,9 @@ public class FirstClassLoader extends ClassLoader{
                     c = findClass(name);
 
                     // this is the defining class loader; record the stats
-                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);
-                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);
-                    sun.misc.PerfCounter.getFindClasses().increment();
+                    PerfCounter.getParentDelegationTime().addTime(t1 - t0);
+                    PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);
+                    PerfCounter.getFindClasses().increment();
                 }
             }
             if (resolve) {
@@ -64,7 +66,6 @@ public class FirstClassLoader extends ClassLoader{
             }
             return c;
         }
-
     }
 
 
