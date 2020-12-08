@@ -27,29 +27,26 @@ public class NettyCodeServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
-                            socketChannel.pipeline()
-                                    /*.addLast(new MessageToMessageDecoder<ByteBuf>() {
+                            socketChannel.pipeline().addLast(new MessageToMessageDecoder<ByteBuf>() {
                                 @Override
                                 protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> list) throws Exception {
-                                    if(in.readableBytes() > 8) {
+                                    System.out.println("---server decode----");
+                                    if(in.readableBytes() >= 8) {
                                         list.add(in.readLong());
                                     }
                                 }
-                            })*/
-                                    .addLast(new SimpleChannelInboundHandler<Object>() {
-                                @Override
-                                protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object aLong) throws Exception {
-                                    System.out.println("----server response------");
-                                    channelHandlerContext.writeAndFlush(1234567L );
-                                }
-                            })
-                                    /*.addLast(new MessageToByteEncoder<Long>() {
+                            }).addLast(new MessageToByteEncoder<Long>() {
                                 @Override
                                 protected void encode(ChannelHandlerContext channelHandlerContext, Long aLong, ByteBuf byteBuf) throws Exception {
                                     byteBuf.writeLong(aLong);
-                                    channelHandlerContext.writeAndFlush(byteBuf);
                                 }
-                            })*/;
+                            }).addLast(new ChannelInboundHandlerAdapter() {
+                                @Override
+                                public void channelRead(ChannelHandlerContext channelHandlerContext, Object aLong) throws Exception {
+                                    System.out.println("----server response------" + "long: " + aLong);
+                                    channelHandlerContext.writeAndFlush(1234567L );
+                                }
+                            });
                         }
                     });
             ChannelFuture future = serverBootstrap.bind(7002).sync();
