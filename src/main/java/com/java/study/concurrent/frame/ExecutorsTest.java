@@ -16,6 +16,12 @@ public class ExecutorsTest {
 
         ThreadPoolExecutor pool5 = new ThreadPoolExecutor(3, 5, 5, TimeUnit.SECONDS,
                 new SynchronousQueue<>());
+        pool5.submit(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(Thread.currentThread().getName() + "-----");
+            }
+        });
 
         for(int i=0;i<6;i++) {
             pool5.execute(new Runnable() {

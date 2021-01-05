@@ -6,12 +6,13 @@ import java.util.concurrent.TimeUnit;
 public class ExchangerTest {
     private static Exchanger<String> exchanger = new Exchanger<>();
     public static void main(String[] args) {
+
         new Thread(){
             @Override
             public void run() {
                 try {
                     //exchange方法具有阻塞特性
-                    System.out.println("Thread0 get Theard1 name: " + exchanger.exchange(Thread.currentThread().getName(), 5, TimeUnit.SECONDS));
+                    System.out.println("Thread0 get Theard1 name: " + exchanger.exchange(Thread.currentThread().getName(), 50, TimeUnit.SECONDS));
                     System.out.println("after exchange");
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -23,7 +24,7 @@ public class ExchangerTest {
             public void run() {
                 try {
                     //exchange方法具有阻塞特性
-                    System.out.println("Thread1 get Theard0 name: " + exchanger.exchange(Thread.currentThread().getName(), 5, TimeUnit.SECONDS));
+                    System.out.println("Thread1 get Theard0 name: " + exchanger.exchange(Thread.currentThread().getName(), 50, TimeUnit.SECONDS));
                     System.out.println("after exchange");
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -18,7 +18,7 @@ public class ClassTest extends SuperClass implements Interface1 {
 
     private int num = 1;
 
-    public String getString(String str1) throws IOException {
+    public synchronized String getString(String str1) throws IOException {
         return str + num + str1;
     }
 }

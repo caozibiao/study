@@ -1,6 +1,10 @@
 package com.java.study.collection;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.ConcurrentSkipListMap;
+import java.util.concurrent.SynchronousQueue;
 
 /**
  * @Author zibiao cao
@@ -33,9 +37,29 @@ public class CollectionTest {
         LinkedHashSet linkedHashSet = new LinkedHashSet();
         linkedHashSet.add("test");
 
-        HashMap hashMap = new HashMap();
-        for(int i=0; i<9; i++) {
+        HashMap hashMap = new HashMap(64);
+        //hashMap.put(new HashOverrideObj(), "test");
+        //hashMap.put(new CollectionTest(), "test");
+        Set set = hashMap.entrySet();
+        for(int i=0; i<15; i++) {
             hashMap.put(new HashOverrideObj(), "test" + i);
+        }
+
+        ConcurrentMap concurrentMap = new ConcurrentHashMap();
+
+        LinkedHashMap<Object, Object> objectObjectLinkedHashMap = new LinkedHashMap<>();
+        objectObjectLinkedHashMap.put("a", "test");
+
+        ConcurrentSkipListMap concurrentSkipListMap = new ConcurrentSkipListMap();
+        for(int i=0; i<15; i++) {
+            concurrentSkipListMap.put("test"+ i, "strign"+ i);
+        }
+
+        SynchronousQueue synchronousQueue = new SynchronousQueue();
+        try {
+            synchronousQueue.put(new Object());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
