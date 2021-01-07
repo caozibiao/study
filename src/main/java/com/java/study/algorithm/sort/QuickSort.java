@@ -7,13 +7,18 @@ package com.java.study.algorithm.sort;
  */
 public class QuickSort {
     public static void main(String[] args) {
-
+        int arr[] = new int[]{3,3,3,7,9,122344,4656,34,34,4656,5,6,7,8,9,343,57765,23,12321};
+        int len = arr.length-1;
+        arr=quickSort(arr,0,len);
+        for (int i:arr) {
+            System.out.print(i+"\t");
+        }
     }
 
-    private int [] quickSort(int [] arr) {
-        int pivot = arr[0];
-        int left = 0;
-        int right = arr.length - 1;
+    private static int [] quickSort(int [] arr, int start, int end) {
+        int pivot = arr[start];
+        int left = start;
+        int right = end;
         while(left < right) {
             while((left< right && arr[right] > pivot)) {
                 right--;
@@ -29,8 +34,12 @@ public class QuickSort {
                 arr[right] = temp;
             }
         }
-        if(left - 1 > 0) {
-
+        if(left - 1 > start) {
+            arr = quickSort(arr, start, left - 1);
         }
+        if(right + 1 < end) {
+            arr = quickSort(arr, right+1, end);
+        }
+        return arr;
     }
 }
