@@ -1,6 +1,6 @@
 package com.java.study.algorithm;
 
-import org.springframework.util.StringUtils;
+//import org.springframework.util.StringUtils;
 
 /**
  * @Author zibiao cao
@@ -8,6 +8,11 @@ import org.springframework.util.StringUtils;
  * @Version 1.0
  */
 public class CheckInclusion {
+    public static void main(String[] args) {
+        boolean [][] booleans = new boolean[3][4];
+        booleans[0][0]=true;
+        System.out.println(booleans[0][0]);
+    }
 
     public boolean checkInclusion(String s1, String s2) {
         if (s1.length() > s2.length())
